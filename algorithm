@@ -1,0 +1,17 @@
+   struct ListNode
+   {
+   int val;
+   ListNode *next;
+}//数据结构
+   ListNode* reverseList(ListNode* head) {
+        ListNode *pre=NULL;//指向逆转过的链表
+        ListNode *next=NULL;//指向后一个指针
+        while(head)
+        {
+            next=head->next;//保留下个指针
+            head->next=pre;//逆转一个
+            pre=head;//重置
+            head=next;//继续下一轮
+        }
+     return pre;   
+    }
